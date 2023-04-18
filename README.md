@@ -1,4 +1,4 @@
-# Google Cloud Workload Identity Pool and Provider for GitLab
+# Google Cloud Workload Identity for GitLab
 
 [![Bagde: Google Cloud](https://img.shields.io/badge/Google%20Cloud-%234285F4.svg?logo=google-cloud&logoColor=white)](https://github.com/Cyclenerd/terraform-google-wif-gitlab#readme)
 [![Badge: Terraform](https://img.shields.io/badge/Terraform-%235835CC.svg?logo=terraform&logoColor=white)](https://github.com/Cyclenerd/terraform-google-wif-gitlab#readme)
