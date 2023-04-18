@@ -39,6 +39,7 @@ module "github-service-account" {
   pool_name  = module.gitlab-wif.pool_name
   account_id = google_service_account.gitlab.account_id
   repository = var.gitlab_repository
+  depends_on = [google_service_account.gitlab]
 }
 
 # Get the Workload Identity Pool Provider resource name for GitLab CI configuration

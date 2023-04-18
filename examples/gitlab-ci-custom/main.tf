@@ -18,7 +18,7 @@ resource "google_service_account" "gitlab" {
   project      = var.project_id
   account_id   = var.gitlab_account_id
   display_name = "GitLab CI (WIF)"
-  description  = "Service Account for GitLab CI ${var.gitlab_repository} (Terraform managed)"
+  description  = "Service Account for self-managed GitLab CI ${var.gitlab_repository} (Terraform managed)"
 }
 
 # Allow service account to login via WIF and only from GitLab repository (project path)
@@ -29,6 +29,7 @@ module "github-service-account" {
   pool_name  = module.gitlab-custom-wif.pool_name
   account_id = google_service_account.gitlab.account_id
   repository = var.gitlab_repository
+  depends_on = [google_service_account.gitlab]
 }
 
 # Get the Workload Identity Pool Provider resource name for GitLab CI configuration

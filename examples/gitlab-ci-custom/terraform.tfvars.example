@@ -1,3 +1,3 @@
 project_id        = "your-project-id"
-gitlab_account_id = "gitlab-ci"
+gitlab_account_id = "gitlab-ci-custom"
 gitlab_repository = "your-org-or-user/your-repo"
