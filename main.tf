@@ -67,14 +67,8 @@ resource "google_iam_workload_identity_pool_provider" "provider" {
   display_name                       = var.provider_display_name
   description                        = var.provider_description
   disabled                           = var.provider_disabled
-
-  attribute_mapping = {
-    "google.subject"       = "assertion.sub"
-    "attribute.sub"        = "assertion.sub"
-    "attribute.user_login" = "assertion.user_login"
-    "attribute.repository" = "assertion.project_path"
-    "attribute.ref"        = "assertion.ref"
-  }
+  attribute_mapping                  = var.attribute_mapping
+  attribute_condition                = var.attribute_condition
   oidc {
     allowed_audiences = [var.allowed_audiences]
     issuer_uri        = var.issuer_uri

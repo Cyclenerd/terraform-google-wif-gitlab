@@ -19,7 +19,7 @@ With this example the following steps are executed and configured:
 # Create Workload Identity Pool Provider for GitLab
 module "gitlab-wif" {
   source     = "Cyclenerd/wif-gitlab/google"
-  version    = "1.0.0"
+  version    = "~> 1.0.0"
   project_id = var.project_id
 }
 
@@ -34,7 +34,7 @@ resource "google_service_account" "gitlab" {
 # Allow service account to login via WIF and only from GitLab repository (project path)
 module "github-service-account" {
   source     = "Cyclenerd/wif-service-account/google"
-  version    = "1.0.0"
+  version    = "~> 1.0.0"
   project_id = var.project_id
   pool_name  = module.gitlab-wif.pool_name
   account_id = google_service_account.gitlab.account_id
