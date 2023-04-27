@@ -67,8 +67,9 @@ Attribute mapping:
 |------------------------|-------------------------------------------------------|
 | `google.subject`       | `assertion.sub`                                       |
 | `attribute.sub`        | `assertion.sub`                                       |
-| `attribute.actor`      | `assertion.actor`                                     |
 | `attribute.repository` | `assertion.project_path` (not `assertion.repository`) |
+| `attribute.user_login` | `assertion.user_login`                                |
+| `attribute.ref`        | `assertion.ref`                                       |
 
 <!-- BEGIN_TF_DOCS -->
 ## Providers
