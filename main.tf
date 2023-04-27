@@ -70,9 +70,10 @@ resource "google_iam_workload_identity_pool_provider" "provider" {
 
   attribute_mapping = {
     "google.subject"       = "assertion.sub"
+    "attribute.sub"        = "assertion.sub"
     "attribute.user_login" = "assertion.user_login"
     "attribute.repository" = "assertion.project_path"
-    "attribute.branch"     = "assertion.ref"
+    "attribute.ref"        = "assertion.ref"
   }
   oidc {
     allowed_audiences = [var.allowed_audiences]
