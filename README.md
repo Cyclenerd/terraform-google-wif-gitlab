@@ -12,7 +12,7 @@ Service account keys are a security risk if compromised.
 Avoid service account keys and instead use the [Workload Identity Federation](https://github.com/Cyclenerd/google-workload-identity-federation#readme).
 For more information about Workload Identity Federation and how to best authenticate service accounts on Google Cloud, please see my GitHub repo [Cyclenerd/google-workload-identity-federation](https://github.com/Cyclenerd/google-workload-identity-federation#readme).
 
-> There is also a ready-to-use Terraform module
+> There are also a ready-to-use Terraform modules
 > for [GitHub](https://github.com/Cyclenerd/terraform-google-wif-github#readme)
 > and [Bitbucket](https://github.com/Cyclenerd/terraform-google-wif-bitbucket#readme).
 
