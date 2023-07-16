@@ -4,7 +4,7 @@
 [![Badge: Terraform](https://img.shields.io/badge/Terraform-%235835CC.svg?logo=terraform&logoColor=white)](https://github.com/Cyclenerd/terraform-google-wif-gitlab#readme)
 [![Badge: GitLab](https://img.shields.io/badge/GitLab-FC6D26.svg?logo=gitlab&logoColor=white)](https://github.com/Cyclenerd/terraform-google-wif-gitlab#readme)
 [![Bagde: CI](https://github.com/Cyclenerd/terraform-google-wif-gitlab/actions/workflows/ci.yml/badge.svg)](https://github.com/Cyclenerd/terraform-google-wif-gitlab/actions/workflows/ci.yml)
-[![Bagde: GitHub](https://img.shields.io/github/license/cyclenerd/terraform-google-wif-gitlab)](https://github.com/Cyclenerd/terraform-google-wif-gitlab/blob/master/LICENSE)
+[![Bagde: License](https://img.shields.io/github/license/cyclenerd/terraform-google-wif-gitlab)](https://github.com/Cyclenerd/terraform-google-wif-gitlab/blob/master/LICENSE)
 
 This Terraform module creates a Workload Identity Pool and Provider for GitLab.
 
@@ -12,7 +12,9 @@ Service account keys are a security risk if compromised.
 Avoid service account keys and instead use the [Workload Identity Federation](https://github.com/Cyclenerd/google-workload-identity-federation#readme).
 For more information about Workload Identity Federation and how to best authenticate service accounts on Google Cloud, please see my GitHub repo [Cyclenerd/google-workload-identity-federation](https://github.com/Cyclenerd/google-workload-identity-federation#readme).
 
-> There is also a ready-to-use Terraform module for [GitHub](https://github.com/Cyclenerd/terraform-google-wif-github#readme).
+> There is also a ready-to-use Terraform module
+> for [GitHub](https://github.com/Cyclenerd/terraform-google-wif-github#readme)
+> and [Bitbucket](https://github.com/Cyclenerd/terraform-google-wif-bitbucket#readme).
 
 ## Example
 

@@ -40,7 +40,7 @@ resource "google_service_account" "gitlab" {
 }
 
 # Allow service account to login via WIF and only from GitLab repository (project path)
-module "github-service-account" {
+module "gitlab-service-account" {
   source     = "Cyclenerd/wif-service-account/google"
   version    = "~> 1.0.0"
   project_id = var.project_id
