@@ -1,10 +1,10 @@
 # Google Cloud Workload Identity for GitLab
 
-[![Bagde: Google Cloud](https://img.shields.io/badge/Google%20Cloud-%234285F4.svg?logo=google-cloud&logoColor=white)](https://github.com/Cyclenerd/terraform-google-wif-gitlab#readme)
+[![Badge: Google Cloud](https://img.shields.io/badge/Google%20Cloud-%234285F4.svg?logo=google-cloud&logoColor=white)](https://github.com/Cyclenerd/terraform-google-wif-gitlab#readme)
 [![Badge: Terraform](https://img.shields.io/badge/Terraform-%235835CC.svg?logo=terraform&logoColor=white)](https://github.com/Cyclenerd/terraform-google-wif-gitlab#readme)
 [![Badge: GitLab](https://img.shields.io/badge/GitLab-FC6D26.svg?logo=gitlab&logoColor=white)](https://github.com/Cyclenerd/terraform-google-wif-gitlab#readme)
-[![Bagde: CI](https://github.com/Cyclenerd/terraform-google-wif-gitlab/actions/workflows/ci.yml/badge.svg)](https://github.com/Cyclenerd/terraform-google-wif-gitlab/actions/workflows/ci.yml)
-[![Bagde: License](https://img.shields.io/github/license/cyclenerd/terraform-google-wif-gitlab)](https://github.com/Cyclenerd/terraform-google-wif-gitlab/blob/master/LICENSE)
+[![Badge: CI](https://github.com/Cyclenerd/terraform-google-wif-gitlab/actions/workflows/ci.yml/badge.svg)](https://github.com/Cyclenerd/terraform-google-wif-gitlab/actions/workflows/ci.yml)
+[![Badge: License](https://img.shields.io/github/license/cyclenerd/terraform-google-wif-gitlab)](https://github.com/Cyclenerd/terraform-google-wif-gitlab/blob/master/LICENSE)
 
 This Terraform module creates a Workload Identity Pool and Provider for GitLab.
 
