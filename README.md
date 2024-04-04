@@ -18,14 +18,20 @@ For more information about Workload Identity Federation and how to best authenti
 
 ## Example
 
+> **Warning**
+> GitLab SaaS use a single issuer URL across all organizations and some of the claims embedded in OIDC tokens might not be unique to your organization.
+> To help protect against spoofing threats, you must use an attribute condition that restricts access to tokens issued by your GitLab group.
+
 Create Workload Identity Pool and Provider:
 
 ```hcl
-# Create Workload Identity Pool Provider for GitLab
+# Create Workload Identity Pool Provider for GitLab and restrict access to GitLab group
 module "gitlab-wif" {
   source     = "Cyclenerd/wif-gitlab/google"
   version    = "~> 1.0.0"
-  project_id = "your-project-id"
+  project_id = var.project_id
+  # Restrict access to username or the name of a GitLab group
+  attribute_condition = "assertion.namespace_path == '${var.gitlab_group}'"
 }
 
 # Get the Workload Identity Pool Provider resource name for GitLab CI configuration
@@ -42,7 +48,7 @@ Allow service account to login via Workload Identity Provider and limit login on
 ```hcl
 # Get existing service account for GitLab CI
 data "google_service_account" "gitlab" {
-  project    = "your-project-id"
+  project    = var.project_id
   account_id = "existing-account-for-gitlab-ci"
 }
 
@@ -50,7 +56,7 @@ data "google_service_account" "gitlab" {
 module "gitlab-service-account" {
   source     = "Cyclenerd/wif-service-account/google"
   version    = "~> 1.0.0"
-  project_id = "your-project-id"
+  project_id = var.project_id
   pool_name  = module.gitlab-wif.pool_name
   account_id = data.google_service_account.gitlab.account_id
   repository = "octo-org/octo-repo"

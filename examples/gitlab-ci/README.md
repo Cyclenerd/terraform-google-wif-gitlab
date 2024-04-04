@@ -16,11 +16,13 @@ With this example the following steps are executed and configured:
 <!-- BEGIN_TF_DOCS -->
 
 ```hcl
-# Create Workload Identity Pool Provider for GitLab
+# Create Workload Identity Pool Provider for GitLab and restrict access to GitLab group
 module "gitlab-wif" {
   source     = "Cyclenerd/wif-gitlab/google"
   version    = "~> 1.0.0"
   project_id = var.project_id
+  # Restrict access to username or the name of a GitLab group
+  attribute_condition = "assertion.namespace_path == '${var.gitlab_group}'"
 }
 
 # Create new service account for GitLab CI
@@ -54,6 +56,7 @@ output "gitlab-workload-identity-provider" {
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_gitlab_account_id"></a> [gitlab\_account\_id](#input\_gitlab\_account\_id) | The account id of the service account for GitLab CI | `string` | n/a | yes |
+| <a name="input_gitlab_group"></a> [gitlab\_group](#input\_gitlab\_group) | The GitLab group or user namespace (namespace path) | `string` | n/a | yes |
 | <a name="input_gitlab_repository"></a> [gitlab\_repository](#input\_gitlab\_repository) | The GitLab repository (project path) | `string` | n/a | yes |
 | <a name="input_project_id"></a> [project\_id](#input\_project\_id) | The ID of the project | `string` | n/a | yes |
 
