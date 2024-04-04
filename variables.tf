@@ -134,8 +134,8 @@ variable "attribute_mapping" {
     "attribute.deployment_tier"       = "assertion.deployment_tier"       # Deployment tier of the environment the job specifies. Introduced in GitLab 15.2.
     # 2024/04/04: runner_id removed. Error: The mapped attribute 'attribute.runner_id' must be of type STRING.
     #"attribute.runner_id"             = "assertion.runner_id"            # ID of the runner executing the job. Introduced in GitLab 16.0.
-    "attribute.runner_environment"    = "assertion.runner_environment"    # The type of runner used by the job. Can be either gitlab-hosted or self-hosted. Introduced in GitLab 16.0.
-    "attribute.sha"                   = "assertion.sha"                   # The commit SHA for the job. Introduced in GitLab 16.0.
+    "attribute.runner_environment" = "assertion.runner_environment" # The type of runner used by the job. Can be either gitlab-hosted or self-hosted. Introduced in GitLab 16.0.
+    "attribute.sha"                = "assertion.sha"                # The commit SHA for the job. Introduced in GitLab 16.0.
   }
 }
 
