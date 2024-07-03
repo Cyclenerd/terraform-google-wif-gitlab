@@ -98,9 +98,9 @@ variable "issuer_uri" {
 }
 
 variable "allowed_audiences" {
-  type        = string
+  type        = list(string)
   description = "Workload Identity Pool Provider allowed audiences"
-  default     = "https://gitlab.com"
+  default     = ["https://gitlab.com"]
 }
 
 variable "attribute_mapping" {

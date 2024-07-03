@@ -70,7 +70,7 @@ resource "google_iam_workload_identity_pool_provider" "provider" {
   attribute_mapping                  = var.attribute_mapping
   attribute_condition                = var.attribute_condition
   oidc {
-    allowed_audiences = [var.allowed_audiences]
+    allowed_audiences = var.allowed_audiences
     issuer_uri        = var.issuer_uri
   }
 

@@ -19,7 +19,7 @@ With this example the following steps are executed and configured:
 # Create Workload Identity Pool Provider for GitLab and restrict access to GitLab group
 module "gitlab-wif" {
   source     = "Cyclenerd/wif-gitlab/google"
-  version    = "~> 1.0.0"
+  version    = "~> 2.0.0"
   project_id = var.project_id
   # Restrict access to username or the name of a GitLab group
   attribute_condition = "assertion.namespace_path == '${var.gitlab_group}'"

@@ -28,7 +28,7 @@ Create Workload Identity Pool and Provider:
 # Create Workload Identity Pool Provider for GitLab and restrict access to GitLab group
 module "gitlab-wif" {
   source     = "Cyclenerd/wif-gitlab/google"
-  version    = "~> 1.0.0"
+  version    = "~> 2.0.0"
   project_id = var.project_id
   # Restrict access to username or the name of a GitLab group
   attribute_condition = "assertion.namespace_path == '${var.gitlab_group}'"
@@ -106,13 +106,13 @@ Default attribute mapping:
 
 | Name | Version |
 |------|---------|
-| <a name="provider_google"></a> [google](#provider\_google) | 4.62.0 |
+| <a name="provider_google"></a> [google](#provider\_google) | >= 4.61.0 |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_allowed_audiences"></a> [allowed\_audiences](#input\_allowed\_audiences) | Workload Identity Pool Provider allowed audiences | `string` | `"https://gitlab.com"` | no |
+| <a name="input_allowed_audiences"></a> [allowed\_audiences](#input\_allowed\_audiences) | Workload Identity Pool Provider allowed audiences | `list(string)` | <pre>[<br>  "https://gitlab.com"<br>]</pre> | no |
 | <a name="input_attribute_condition"></a> [attribute\_condition](#input\_attribute\_condition) | (Optional) Workload Identity Pool Provider attribute condition expression | `string` | `null` | no |
 | <a name="input_attribute_mapping"></a> [attribute\_mapping](#input\_attribute\_mapping) | Workload Identity Pool Provider attribute mapping | `map(string)` | <pre>{<br>  "attribute.aud": "attribute.aud",<br>  "attribute.deployment_tier": "assertion.deployment_tier",<br>  "attribute.environment": "assertion.environment",<br>  "attribute.environment_protected": "assertion.environment_protected",<br>  "attribute.iss": "attribute.iss",<br>  "attribute.job_id": "assertion.job_id",<br>  "attribute.namespace_id": "assertion.namespace_id",<br>  "attribute.namespace_path": "assertion.namespace_path",<br>  "attribute.pipeline_id": "assertion.pipeline_id",<br>  "attribute.pipeline_source": "assertion.pipeline_source",<br>  "attribute.project_id": "assertion.project_id",<br>  "attribute.project_path": "assertion.project_path",<br>  "attribute.ref": "assertion.ref",<br>  "attribute.ref_protected": "assertion.ref_protected",<br>  "attribute.ref_type": "assertion.ref_type",<br>  "attribute.repository": "assertion.project_path",<br>  "attribute.runner_environment": "assertion.runner_environment",<br>  "attribute.sha": "assertion.sha",<br>  "attribute.sub": "attribute.sub",<br>  "attribute.user_email": "assertion.user_email",<br>  "attribute.user_id": "assertion.user_id",<br>  "attribute.user_login": "assertion.user_login",<br>  "google.subject": "assertion.sub"<br>}</pre> | no |
 | <a name="input_issuer_uri"></a> [issuer\_uri](#input\_issuer\_uri) | Workload Identity Pool Provider issuer URI | `string` | `"https://gitlab.com"` | no |

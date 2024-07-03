@@ -19,9 +19,9 @@ With this example the following steps are executed and configured:
 # Create Workload Identity Pool Provider for self-managed GitLab installation
 module "gitlab-custom-wif" {
   source                = "Cyclenerd/wif-gitlab/google"
-  version               = "~> 1.0.0"
+  version               = "~> 2.0.0"
   project_id            = var.project_id
-  allowed_audiences     = "https://gitlab.example.com"
+  allowed_audiences     = ["https://gitlab.example.com"]
   issuer_uri            = "https://gitlab.example.com"
   pool_id               = "gitlab-example-com"
   pool_display_name     = "gitlab.example.com"
